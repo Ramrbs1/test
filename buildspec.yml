@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+    install:
+        commands:
+            - echo no installation is required
+    build:
+        commands:
+            - echo Build started on `date`
+            - aws cloudformation validate-template --template-body file://CreateRole.yml
+    post_build:
+         commands:
+            - aws cloudformation deploy --stack-name createRole --template-body file://CreateRole.yml
+            - echo Build completed on `date`
+artifacts:
+    files:
+        - '**/*'
+    base-directory: 'dist*'
+    discard-paths: yes
