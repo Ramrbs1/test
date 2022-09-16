@@ -7,10 +7,10 @@ phases:
     build:
         commands:
             - echo Build started on `date`
-            - aws cloudformation validate-template --template-body file://CreateRole.yml --capabilities CAPABILITY_NAMED_IAM
+            - aws cloudformation validate-template --template-body file://CreateRole.yml --capabilities CAPABILITY_IAM
     post_build:
          commands:
-            - aws cloudformation deploy --stack-name createRole --template-body file://CreateRole.yml --capabilities CAPABILITY_NAMED_IAM
+            - aws cloudformation deploy --stack-name createRole --template-body file://CreateRole.yml --capabilities CAPABILITY_IAM
             - echo Build completed on `date`
 artifacts:
   paths:
