@@ -4,6 +4,7 @@ Resources:
     SampleManagedPolicy:
         Type: AWS::IAM::ManagedPolicy
         Properties:
+          Name: codebuildpolicy
           PolicyDocument:
             Version: '2012-10-17'
             Statement:
@@ -15,9 +16,10 @@ Resources:
                   - iam:ListUsers
                   - iam:GetAccountSummary
                 Resource: "*"
-    RootRole:
+    CodeBuildRole:
         Type: 'AWS::IAM::Role'
         Properties:
+          Name : codebuildrole
           AssumeRolePolicyDocument:
             Version: '2012-10-17'
             Statement:
@@ -29,4 +31,4 @@ Resources:
                   - 'sts:AssumeRole'
           Path: /
           ManagedPolicyArns:
-            - !Ref SampleManagedPolicy
+            - !Ref codebuildpolicy
