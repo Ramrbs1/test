@@ -2,9 +2,8 @@ Description: >
     This file needs to be called by buildspec.yml
 Resources:
     SampleManagedPolicy:
-        Type: AWS::IAM::Policy
+        Type: AWS::IAM::ManagedPolicy
         Properties:
-          PolicyName: codebuildpolicy
           PolicyDocument:
             Version: '2012-10-17'
             Statement:
@@ -19,7 +18,6 @@ Resources:
     CodeBuildRole:
         Type: 'AWS::IAM::Role'
         Properties:
-          RoleName : codebuildrole
           AssumeRolePolicyDocument:
             Version: '2012-10-17'
             Statement:
