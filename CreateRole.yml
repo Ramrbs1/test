@@ -4,7 +4,7 @@ Resources:
     SampleManagedPolicy:
         Type: AWS::IAM::ManagedPolicy
         Properties:
-          Name: codebuildpolicy
+          PolicyName: codebuildpolicy
           PolicyDocument:
             Version: '2012-10-17'
             Statement:
@@ -19,7 +19,7 @@ Resources:
     CodeBuildRole:
         Type: 'AWS::IAM::Role'
         Properties:
-          Name : codebuildrole
+          RoleName : codebuildrole
           AssumeRolePolicyDocument:
             Version: '2012-10-17'
             Statement:
