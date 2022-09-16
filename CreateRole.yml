@@ -2,7 +2,7 @@ Description: >
     This file needs to be called by buildspec.yml
 Resources:
     SampleManagedPolicy:
-        Type: AWS::IAM::ManagedPolicy
+        Type: AWS::IAM::Policy
         Properties:
           PolicyName: codebuildpolicy
           PolicyDocument:
