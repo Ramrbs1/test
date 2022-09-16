@@ -1,6 +1,5 @@
 Description: >
     This file needs to be called by buildspec.yml
-    
 Resources:
     SampleManagedPolicy:
         Type: AWS::IAM::ManagedPolicy
