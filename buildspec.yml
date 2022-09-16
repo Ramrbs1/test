@@ -13,7 +13,5 @@ phases:
             - aws cloudformation deploy --stack-name createRole --template-body file://CreateRole.yml
             - echo Build completed on `date`
 artifacts:
-    files:
-        - '**/*'
-    base-directory: 'dist*'
-    discard-paths: yes
+  paths:
+    - '*'
